@@ -73,13 +73,9 @@ export async function getCurrentUser() {
 export async function getHotDogEntries() {
     if (!supabase) return [];
 
-    const user = await getCurrentUser();
-    if (!user) return [];
-
     const { data, error } = await supabase
         .from("hotdog_entries")
         .select("*")
-        .eq("user_id", user.id)
         .order("created_at", { ascending: false });
 
     if (error) {

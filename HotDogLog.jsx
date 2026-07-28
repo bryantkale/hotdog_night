@@ -157,7 +157,6 @@ export default function HotDogLog() {
     }
 
     function handleAuthModeSwitch() {
-        console.log(authMode, 'authMode')
         // auth mode is signup rn
         setAuthMode((currentMode) => (currentMode === "login" ? "signup" : "login"));
         setAuthMessage("");
