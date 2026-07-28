@@ -275,7 +275,7 @@ export default function HotDogLog() {
 
                 <section>
                     <div className="hdl-log-header">
-                        <h2 className="hdl-display hdl-log-title">Your log</h2>
+                        <h2 className="hdl-display hdl-log-title">All logs</h2>
                         <span className="hdl-mono hdl-log-count">
                             {total ? `${total} entr${total === 1 ? "y" : "ies"}` : ""}
                         </span>
