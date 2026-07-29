@@ -66,12 +66,11 @@ export function AuthPanel({
                 Continue with Google
             </button>
 
-            <div
-                id="g_id_onload"
-                data-client_id="952712180133-lmrnnku1quc5b233g2csj8vpoplucauu.apps.googleusercontent.com"
+            <div id="g_id_onload"
+                data-client_id="52712180133-ukuatpc8euivitmuo9icgq97ra6qflb9.apps.googleusercontent.com"
                 data-context="signin"
                 data-ux_mode="popup"
-                data-login_uri={typeof window !== "undefined" ? window.location.origin : ""}
+                data-login_uri="https://hotdognights.caelin.io"
                 data-auto_prompt="false"
             />
 
