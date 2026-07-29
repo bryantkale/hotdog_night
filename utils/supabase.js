@@ -64,6 +64,36 @@ export async function signInWithEmail(email, password) {
     return { success: true, user: data?.user ?? null, message: "You are logged in." };
 }
 
+export async function signInWithGoogle() {
+    if (!supabase) {
+        return { success: false, message: "Supabase is not configured yet." };
+    }
+
+    const redirectTo = typeof window !== "undefined" ? window.location.origin : undefined;
+
+    const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+            redirectTo,
+            queryParams: {
+                access_type: "offline",
+                prompt: "consent",
+            },
+        },
+    });
+
+    if (error) {
+        console.error("Supabase Google sign in error", error);
+        return { success: false, message: error.message || "Google sign-in failed." };
+    }
+
+    if (data?.url) {
+        window.location.assign(data.url);
+    }
+
+    return { success: true, message: "Redirecting to Google sign-in..." };
+}
+
 export async function getCurrentUser() {
     if (!supabase) return null;
     const { data: { user } } = await supabase.auth.getUser();

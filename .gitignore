@@ -1,6 +1,7 @@
 .env
 node_modules/
 dist/
+supabase/config.toml
 
 # Local Netlify folder
 .netlify

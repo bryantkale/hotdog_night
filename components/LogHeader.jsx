@@ -14,6 +14,7 @@ export function LogHeader({
     onAuthSubmit,
     onLogout,
     onModeSwitch,
+    onGoogleSignIn,
 }) {
     return (
         <header className="hdl-hero">
@@ -40,6 +41,7 @@ export function LogHeader({
                         onSubmit={onAuthSubmit}
                         onLogout={onLogout}
                         onModeSwitch={onModeSwitch}
+                        onGoogleSignIn={onGoogleSignIn}
                     />
                 </div>
                 <svg className="hdl-hero-illustration" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">

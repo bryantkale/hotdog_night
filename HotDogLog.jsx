@@ -4,7 +4,7 @@ import { LogForm } from "./components/LogForm";
 import { LogHeader } from "./components/LogHeader";
 import { StatsStrip } from "./components/StatsStrip";
 import { resizeImageFile } from "./utils/image";
-import { deleteHotDogEntry, getHotDogEntries, saveHotDogEntry, signInWithEmail, signUpWithEmail, supabase } from "./utils/supabase";
+import { deleteHotDogEntry, getHotDogEntries, saveHotDogEntry, signInWithEmail, signInWithGoogle, signUpWithEmail, supabase } from "./utils/supabase";
 import "./styles.css";
 
 const STORAGE_KEY = "hotdog-entries";
@@ -156,6 +156,16 @@ export default function HotDogLog() {
         setShowLogForm(false);
     }
 
+    async function handleGoogleSignIn() {
+        setAuthMessage("");
+        const result = await signInWithGoogle();
+        if (!result.success) {
+            setAuthMessage(result.message || "Google sign-in failed.");
+        } else {
+            setAuthMessage(result.message || "Redirecting to Google...");
+        }
+    }
+
     function handleAuthModeSwitch() {
         // auth mode is signup rn
         setAuthMode((currentMode) => (currentMode === "login" ? "signup" : "login"));
@@ -230,6 +240,7 @@ export default function HotDogLog() {
                     onAuthSubmit={handleAuthSubmit}
                     onLogout={handleLogout}
                     onModeSwitch={handleAuthModeSwitch}
+                    onGoogleSignIn={handleGoogleSignIn}
                 />
 
                 <StatsStrip total={total} avg={avg} places={places} />

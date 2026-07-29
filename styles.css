@@ -288,6 +288,30 @@
     align-items: center;
 }
 
+.hdl-auth-divider {
+    text-align: center;
+    font-size: 10px;
+    color: #7E2A20;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin: 2px 0;
+}
+
+.hdl-google-button {
+    border: none;
+    border-radius: 999px;
+    background: #221E18;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 9px 12px;
+}
+
+.hdl-google-button:hover {
+    background: #3c3326;
+}
+
 .hdl-auth-link {
     background: none;
     border: none;
