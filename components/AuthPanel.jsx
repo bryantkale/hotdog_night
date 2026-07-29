@@ -67,7 +67,7 @@ export function AuthPanel({
             </button>
 
             <div id="g_id_onload"
-                data-client_id="52712180133-ukuatpc8euivitmuo9icgq97ra6qflb9.apps.googleusercontent.com"
+                data-client_id="952712180133-ukuatpc8euivitmuo9icgq97ra6qflb9.apps.googleusercontent.com"
                 data-context="signin"
                 data-ux_mode="popup"
                 data-login_uri="https://hotdognights.caelin.io"
