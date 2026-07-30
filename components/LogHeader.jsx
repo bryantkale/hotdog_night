@@ -56,7 +56,7 @@ export function LogHeader({
                 </div>
                 <img
                     className="hdl-hero-illustration"
-                    src="/utils/images/HotDog.svg"
+                    src="/utils/images/HotDog.png"
                     alt="Hot dog illustration"
                     width="100"
                     height="100"
