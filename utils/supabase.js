@@ -102,7 +102,7 @@ export async function getCurrentUser() {
 
 export async function getHotDogEntries() {
     if (!supabase) return [];
-
+    console.log(supabase, 'supabase')
     const { data, error } = await supabase
         .from("hotdog_entries")
         .select("*")

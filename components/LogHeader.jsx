@@ -19,8 +19,18 @@ export function LogHeader({
     return (
         <header className="hdl-hero">
             <div>
-                <span className="hdl-hero-badge">personal archive · est. today</span>
-                <h1 className="hdl-display hdl-title">THE HOT DOG LOG</h1>
+                <span className="hdl-hero-badge">personal archive · est. 2026</span>
+                <h1 className="hdl-title" aria-label="The Hot Dog Log">
+                    <span className="hdl-title-line hdl-title-line-top">
+                        <span className="hdl-title-word hdl-title-word-federal">THE</span>
+                    </span>
+                    <span className="hdl-title-line hdl-title-line-middle">
+                        <span className="hdl-title-word hdl-title-word-caslon">HOT DOG</span>
+                    </span>
+                    <span className="hdl-title-line hdl-title-line-bottom">
+                        <span className="hdl-title-word hdl-title-word-federal">LOG</span>
+                    </span>
+                </h1>
                 <p className="hdl-hero-copy">
                     Every cart, stand, and stadium dog you've tracked down — rated, dated, and stapled to a photo.
                 </p>
@@ -44,12 +54,13 @@ export function LogHeader({
                         onGoogleSignIn={onGoogleSignIn}
                     />
                 </div>
-                <svg className="hdl-hero-illustration" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="50" cy="62" rx="42" ry="15" fill="#D9A62E" stroke="#221E18" strokeWidth="3" />
-                    <path d="M12 58 Q50 40 88 58" stroke="#221E18" strokeWidth="3" fill="none" />
-                    <path d="M20 52 Q50 62 80 52" stroke="#F8F2E2" strokeWidth="4" strokeLinecap="round" fill="none" />
-                    <path d="M22 46 Q35 38 50 45 Q65 52 78 44" stroke="#A9382B" strokeWidth="3" strokeLinecap="round" fill="none" />
-                </svg>
+                <img
+                    className="hdl-hero-illustration"
+                    src="/utils/images/HotDog.svg"
+                    alt="Hot dog illustration"
+                    width="100"
+                    height="100"
+                />
             </div>
         </header>
     );

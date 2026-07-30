@@ -3,11 +3,6 @@ import { HotDogEmoji } from "./HotDogEmoji";
 export function EntryCard({ entry, onDelete }) {
     return (
         <div className="hdl-entry-card">
-            <div className="hdl-photo-wrap">
-                {entry.photo && (
-                    <img className="hdl-entry-photo" src={entry.photo} alt={entry.name} />
-                )}
-            </div>
             <div className="hdl-entry-content">
                 <div className="hdl-entry-header">
                     <h3 className="hdl-display hdl-entry-title">
@@ -37,6 +32,11 @@ export function EntryCard({ entry, onDelete }) {
                         </p>
                     </>
                 )}
+                <div className="hdl-photo-wrap">
+                    {entry.photo && (
+                        <img className="hdl-entry-photo" src={entry.photo} alt={entry.name} />
+                    )}
+                </div>
             </div>
         </div>
     );

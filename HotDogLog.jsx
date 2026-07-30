@@ -46,26 +46,8 @@ export default function HotDogLog() {
     useEffect(() => {
         (async () => {
             try {
-                let user = null;
-
-                if (supabase) {
-                    const { data: sessionData, error: sessionError } = await supabase.auth.getSessionFromUrl({
-                        storeSession: true,
-                    });
-
-                    if (sessionError) {
-                        console.warn("OAuth callback handling warning", sessionError);
-                    }
-
-                    const sessionUser = sessionData?.session?.user ?? null;
-                    if (sessionUser) {
-                        user = sessionUser;
-                    } else {
-                        const currentUser = await supabase.auth.getUser();
-                        user = currentUser?.data?.user ?? null;
-                    }
-                }
-
+                const currentUser = await supabase?.auth.getUser();
+                const user = currentUser?.data?.user ?? null;
                 setAuthState(user ? "ready" : "guest");
                 setUserLabel(user?.user_metadata?.username || user?.email || "Guest");
                 setShowLogForm(false);

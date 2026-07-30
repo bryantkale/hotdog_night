@@ -1,5 +1,5 @@
 .hdl-root {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     min-height: 100vh;
 }
 
@@ -30,34 +30,66 @@
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #7E2A20;
+    /* color: #7E2A20; */
     display: block;
     margin-bottom: 6px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
 }
 
 .hdl-display {
-    font-family: 'Bungee', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .hdl-mono {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .hdl-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.08em;
     font-size: clamp(28px, 6vw, 42px);
-    line-height: 1;
-    color: #A9382B;
+    line-height: 0.9;
+    color: #8a451f;
     margin: 0 0 10px;
-    text-shadow: 2px 2px 0 #221E18;
+    letter-spacing: 0.02em;
 }
+
+.hdl-title-line {
+    display: block;
+    width: fit-content;
+    text-align: center;
+}
+
+.hdl-title-word {
+    font-family: 'ltr-federal', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem
+}
+
+.hdl-title-word-federal {
+    font-family: 'ltr-federal', sans-serif;
+    font-weight: 700;
+}
+
+.hdl-title-word-caslon {
+    font-family: 'caslonian-open-std-l', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 0.01em;
+    font-size: 3rem;
+}
+
 
 .hdl-hero-copy {
     margin: 0;
     max-width: 440px;
     font-size: 14.5px;
     line-height: 1.5;
-    color: #3a352c;
+    font-style: italic;
+    /* color: #3a352c; */
 }
 
 .hdl-hero-actions {
@@ -74,7 +106,7 @@
     padding: 8px 12px;
     cursor: pointer;
     font-size: 12px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .hdl-hero-illustration {
@@ -149,7 +181,7 @@
     border-radius: 7px;
     background: #fff;
     color: #221E18;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     width: 100%;
 }
 
@@ -255,16 +287,64 @@
     gap: 6px;
 }
 
-.hdl-auth-card-ready {
-    display: flex;
+.hdl-auth-card-ready,
+.hdl-auth-card-menu {
+    position: relative;
+}
+
+.hdl-auth-menu-trigger {
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 6px;
+    background: #221E18;
+    color: #F8F2E2;
+    border: 2px solid #221E18;
+    border-radius: 999px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.hdl-auth-menu-trigger-guest {
+    min-width: 152px;
+}
+
+.hdl-auth-menu-caret {
+    font-size: 10px;
+    line-height: 1;
 }
 
 .hdl-auth-label {
     font-size: 12px;
-    color: #7E2A20;
-    font-family: 'JetBrains Mono', monospace;
+    color: inherit;
+    font-family: inherit;
+}
+
+.hdl-auth-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    z-index: 20;
+    background: #F8F2E2;
+    border: 2px solid #221E18;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 rgba(34, 30, 24, 0.22);
+    padding: 10px;
+    min-width: 260px;
+}
+
+.hdl-auth-menu-item {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: #221E18;
+    color: #F8F2E2;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: left;
 }
 
 .hdl-auth-form {
