@@ -1,3 +1,7 @@
+body {
+    background-color: #EDE1C3;
+}
+
 .hdl-root {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     min-height: 100vh;
@@ -305,6 +309,7 @@
     cursor: pointer;
     font-size: 12px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-height: 40px;
 }
 
 .hdl-auth-menu-trigger-guest {
@@ -352,6 +357,53 @@
     flex-direction: column;
     gap: 6px;
     min-width: 220px;
+}
+
+@media (max-width: 640px) {
+    .hdl-hero {
+        align-items: flex-start;
+    }
+
+    .hdl-hero-actions {
+        width: 100%;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .hdl-auth-card {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .hdl-auth-card-ready,
+    .hdl-auth-card-menu {
+        width: 100%;
+    }
+
+    .hdl-auth-menu-trigger {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hdl-auth-menu {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        top: auto;
+        bottom: 12px;
+        min-width: auto;
+        max-height: min(70vh, 480px);
+        overflow-y: auto;
+    }
+
+    .hdl-auth-form {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .hdl-auth-actions {
+        flex-wrap: wrap;
+    }
 }
 
 .hdl-auth-input {
