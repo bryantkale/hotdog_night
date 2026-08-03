@@ -1,6 +1,7 @@
 import { AuthPanel } from "./AuthPanel";
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || "";
 
-const HOT_DOG_IMAGE_URL = "https://dcsmjiyimxsnmarchisx.supabase.co/storage/v1/object/public/album-art/HotDogStockImage.png";
+const HOT_DOG_IMAGE_URL = `${supabaseUrl}/storage/v1/object/public/album-art/HotDogStockImage.png`;
 
 export function LogHeader({
     authState,
