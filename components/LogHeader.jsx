@@ -1,5 +1,7 @@
 import { AuthPanel } from "./AuthPanel";
 
+const HOT_DOG_IMAGE_URL = "https://dcsmjiyimxsnmarchisx.supabase.co/storage/v1/object/public/album-art/HotDogStockImage.png";
+
 export function LogHeader({
     authState,
     authMode,
@@ -16,6 +18,7 @@ export function LogHeader({
     onModeSwitch,
     onGoogleSignIn,
 }) {
+
     return (
         <header className="hdl-hero">
             <div>
@@ -32,7 +35,7 @@ export function LogHeader({
                     </span>
                 </h1>
                 <p className="hdl-hero-copy">
-                    Every cart, stand, and stadium dog you've tracked down — rated, dated, and stapled to a photo.
+                    For your everyday hot dog needs. Logs for every cart, stand, and stadium dog you've had.
                 </p>
             </div>
             <div className="hdl-hero-actions">
@@ -56,7 +59,7 @@ export function LogHeader({
                 </div>
                 <img
                     className="hdl-hero-illustration"
-                    src="../images/HotDog.png"
+                    src={HOT_DOG_IMAGE_URL}
                     alt="Hot dog illustration"
                     width="100"
                     height="100"

@@ -1,5 +1,6 @@
 body {
-    background-color: #EDE1C3;
+    background-color: #f5f5f2;
+    margin: 0;
 }
 
 .hdl-root {
@@ -8,9 +9,8 @@ body {
 }
 
 .hdl-bg {
-    background-color: #EDE1C3;
-    background-image: radial-gradient(circle at 1px 1px, rgba(34, 30, 24, 0.06) 1px, transparent 0);
-    background-size: 18px 18px;
+    background-color: #f5f5f2;
+    background-image: none;
 }
 
 .hdl-page-shell {
@@ -259,12 +259,35 @@ body {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .hdl-log-title {
     font-size: 16px;
     margin: 0;
+}
+
+.hdl-sort-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.hdl-sort-pill {
+    border: 1px solid rgba(34, 30, 24, 0.2);
+    background: #fff;
+    color: #221E18;
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.hdl-sort-pill.active {
+    background: #221E18;
+    color: #F8F2E2;
+    border-color: #221E18;
 }
 
 .hdl-log-count {
@@ -488,13 +511,39 @@ body {
 
 .hdl-entry-card {
     position: relative;
-    background: #F8F2E2;
+    background: #ffffff;
     border: 2px solid #221E18;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 3px 3px 0 rgba(34, 30, 24, 0.25);
+    box-shadow: 0 2px 8px rgba(34, 30, 24, 0.08);
     display: flex;
     flex-direction: column;
+}
+
+.hdl-entry-rating-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 2px;
+    background: #A9382B;
+    color: #fff;
+    border-radius: 999px;
+    padding: 7px 10px;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(34, 30, 24, 0.18);
+    z-index: 1;
+}
+
+.hdl-entry-rating-value {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.hdl-entry-rating-max {
+    font-size: 11px;
+    opacity: 0.95;
 }
 
 .hdl-photo-wrap {
@@ -511,10 +560,11 @@ body {
 }
 
 .hdl-entry-content {
-    padding: 14px 16px 16px;
+    padding: 16px 16px 16px;
     display: flex;
     flex-direction: column;
     gap: 6px;
+    padding-top: 44px;
 }
 
 .hdl-entry-header {
@@ -589,18 +639,6 @@ body {
 .hdl-divider {
     position: relative;
     border-top: 2px dashed rgba(34, 30, 24, 0.18);
-}
-
-.hdl-divider::before,
-.hdl-divider::after {
-    content: '';
-    position: absolute;
-    top: -9px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #EDE1C3;
-    border: 2px solid #221E18;
 }
 
 .hdl-divider::before {

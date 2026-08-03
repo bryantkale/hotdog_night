@@ -221,7 +221,16 @@ export default function HotDogLog() {
     const total = entries.length;
     const avg = total ? (entries.reduce((s, e) => s + (e.rating || 0), 0) / total).toFixed(1) : "0.0";
     const places = new Set(entries.map((e) => (e.location || "").toLowerCase().trim()).filter(Boolean)).size;
-    const sorted = [...entries].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+    const [sortMode, setSortMode] = useState("recent");
+    const sorted = [...entries].sort((a, b) => {
+        if (sortMode === "rating") {
+            return (b.rating || 0) - (a.rating || 0);
+        }
+        if (sortMode === "alpha") {
+            return (a.name || "").localeCompare(b.name || "");
+        }
+        return (b.date || "").localeCompare(a.date || "");
+    });
 
     return (
         <div className="hdl-root hdl-bg">
@@ -290,6 +299,23 @@ export default function HotDogLog() {
                         <span className="hdl-mono hdl-log-count">
                             {total ? `${total} entr${total === 1 ? "y" : "ies"}` : ""}
                         </span>
+                    </div>
+
+                    <div className="hdl-sort-bar" role="tablist" aria-label="Sort logs">
+                        {[
+                            { value: "recent", label: "Most recent" },
+                            { value: "rating", label: "Highest rated" },
+                            { value: "alpha", label: "A–Z" },
+                        ].map((option) => (
+                            <button
+                                key={option.value}
+                                type="button"
+                                className={`hdl-sort-pill${sortMode === option.value ? " active" : ""}`}
+                                onClick={() => setSortMode(option.value)}
+                            >
+                                {option.label}
+                            </button>
+                        ))}
                     </div>
 
                     {!loaded ? (
